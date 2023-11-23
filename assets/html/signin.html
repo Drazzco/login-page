@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/signin.css">
         <title>Sign in</title>
     </head>
@@ -11,12 +12,13 @@
             <div class="card">
                 <h1>Enter</h1>
                 <div class="label-float">
-                    <input type="text" id="username" placeholder="" />
+                    <input type="text" id="username" placeholder="" required/>
                     <label for="username">Username</label>
                 </div>
                 <div class="label-float">
-                    <input type="password" id="password" placeholder="" />
+                    <input type="password" id="password" placeholder="" required>
                     <label for="password">Password</label>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
                 </div>
                 <div class="justify-center">
                     <button>Enter</button>
@@ -26,9 +28,10 @@
                 </div>
                 <p>
                     Do not have an account?
-                    <a href="">Sign Up</a>
+                    <a href="signup.html">Sign Up</a>
                 </p>
             </div>
         </div>
+        <script src="../js/signin.js"></script>
     </body>
 </html>
