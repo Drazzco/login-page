@@ -12,6 +12,8 @@ let validName = false
 let validUsername = false
 let validPassword = false
 let validConfirmPass = false
+let msgError = document.querySelector("#msgError")
+let msgSuccess = document.querySelector("#msgSuccess")
 
 nameSign.addEventListener("keyup", () => {
     if(nameSign.value.length <= 2) 
@@ -86,11 +88,33 @@ function signup()
     //alert("Button Clicked")
     if(validName && validUsername && validPassword && validConfirmPass)
     {
-        alert("Succesfully signed up!")
+        let userList = JSON.parse(localStorage.getItem("userList") || "[]");
+        userList.push(
+            {
+                nameSignUp: nameSign.value,
+                usernameSignUp: username.value,
+                passwordSignUp: password.value
+            }
+            )
+
+            localStorage.setItem("userList", JSON.stringify(userList))
+
+        //alert("Succesfully signed up!")
+        msgSuccess.setAttribute("style","display: block")
+        msgSuccess.innerHTML = "<strong>Signing up the user...</strong>"
+        msgError.setAttribute("style","display: none")
+        msgError.innerHTML = ""
+            setTimeout(() => {
+                window.location.href = "signin.html"
+            }, 3000)
     }
     else
     {
-        alert("Some field is empty or incorrect")
+        //alert("Some field is empty or incorrect")
+        msgError.setAttribute("style","display: block")
+        msgError.innerHTML = "<strong>Fill all the fields correctly before sign up!</strong>"
+        msgSuccess.setAttribute("style","display: none")
+        msgSuccess.innerHTML = ""
     }
 }
 
