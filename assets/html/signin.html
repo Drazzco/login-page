@@ -11,17 +11,18 @@
         <div class="container">
             <div class="card">
                 <h1>Enter</h1>
+                <div id="msgError"></div>
                 <div class="label-float">
                     <input type="text" id="username" placeholder="" required/>
-                    <label for="username">Username</label>
+                    <label id="labelUsername" for="username">Username</label>
                 </div>
                 <div class="label-float">
                     <input type="password" id="password" placeholder="" required>
-                    <label for="password">Password</label>
+                    <label id="labelPassword" for="password">Password</label>
                     <i class="fa fa-eye" aria-hidden="true"></i>
                 </div>
                 <div class="justify-center">
-                    <button>Enter</button>
+                    <button onclick="login()">Enter</button>
                 </div>
                 <div>
                     <hr />
