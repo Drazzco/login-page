@@ -6,7 +6,8 @@ if (localStorage.getItem("token") == null) {
 let userLoggedIn = JSON.parse(localStorage.getItem("userLoggedIn"));
 
 let loggedIn = document.querySelector("#loggedIn");
-loggedIn.innerHTML = "Hi ${userLoggedIn.name}";
+console.log(userLoggedIn)
+loggedIn.innerHTML = "Hi, " + userLoggedIn.nameSign
 
 function exit() {
     localStorage.removeItem("token");

@@ -18,7 +18,7 @@ function login()
     let labelUsername = document.querySelector("#labelUsername")
     let password = document.querySelector("#password")
     let labelPassword = document.querySelector("#labelPassword")
-    let msgError = document.querySelector("msgError")
+    let msgError = document.querySelector("#msgError")
     let userList = []
     let validUser = {
         nameSign: "",
@@ -38,10 +38,10 @@ function login()
         }
     });
     //console.log(validUser)
-    if(username.value == validUser.nameSign && password.value == validUser.password)
+    if(username.value == validUser.username && password.value == validUser.password)
     {
         //alert("Logged in successfully")
-        window.location.href = "../index.html"
+        window.location.href = "../../index.html"
         let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
         //console.log(token) before substring
         localStorage.setItem("token", token) //localStorage aceita apenas strings
